@@ -16,6 +16,6 @@ In order to do that you have to go to this link: https://github.com/settings/tok
 
 2. To run this project do follow commands:
 ```
-    1. npm install
-    2. npm start
+1. npm install
+2. npm start
 ```
