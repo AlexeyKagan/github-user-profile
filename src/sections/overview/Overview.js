@@ -1,22 +1,21 @@
 import { useQuery } from '@apollo/client';
 import { GET_USER_INFO_BY_LOGIN } from 'services/github-schema';
-import { useMemo } from 'react';
 import UserProfile from './UserProfile';
-import PinnedRepository from './PinnedRepository';
+import RepositoryList from './RepositoryList';
 import styled from 'styled-components';
-import { pinnedItemsResolver } from './utils';
+import { getRepositories } from './utils';
 
-// const LOGIN = 'gaearon';
-const LOGIN = 'AlexeyKagan';
+const LOGIN = 'gaearon';
+// const LOGIN = 'AlexeyKagan';
+const NUMBER_OF_REPOS = 10;
 
 const OverviewPage = () => {
   const { loading, error, data } = useQuery(GET_USER_INFO_BY_LOGIN, {
     variables: {
       login: LOGIN,
+      number_of_repos: NUMBER_OF_REPOS,
     },
   });
-
-  const pinnedItems = useMemo(() => pinnedItemsResolver(data), [data]);
 
   if (loading) {
     return 'Loading...';
@@ -26,10 +25,12 @@ const OverviewPage = () => {
     return `Error! ${error}`;
   }
 
+  const repositories = getRepositories(data);
+
   return (
     <OverviewContainer>
       <UserProfile userData={data.user} />
-      <PinnedRepository pinnedItems={pinnedItems} />
+      <RepositoryList repositories={repositories} />
     </OverviewContainer>
   );
 };

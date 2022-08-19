@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { COLORS } from 'consts/colors';
 import { ReactComponent as StarIcon } from 'assets/svg/star.svg';
 import { ReactComponent as ForkIcon } from 'assets/svg/forks.svg';
+import { Fragment } from 'react';
 
 const COLOR_MAP = {
   JavaScript: COLORS.L_YELLOW,
@@ -15,18 +16,24 @@ const Repository = (props) => {
   const {
     nameWithOwner,
     description,
-    primaryLanguage: { name: primaryLanguageName },
+    primaryLanguage,
     stargazerCount,
     forkCount,
   } = repository;
+
+  const primaryLanguageName = primaryLanguage?.name;
 
   return (
     <RepositoryContainer onClick={() => onClick(repository)}>
       <RepositoryNameWithOwner>{nameWithOwner}</RepositoryNameWithOwner>
       <RepositoryDescription>{description}</RepositoryDescription>
       <RepositoryFooter>
-        <RepositoryLanguageCircle language={primaryLanguageName} />
-        <span>{primaryLanguageName} </span>
+        {primaryLanguageName && (
+          <Fragment>
+            <RepositoryLanguageCircle language={primaryLanguageName} />
+            <span>{primaryLanguageName} </span>
+          </Fragment>
+        )}
         <span>
           <StarIcon />
           {kFormatter(stargazerCount)}{' '}

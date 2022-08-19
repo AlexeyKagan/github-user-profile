@@ -1,6 +1,6 @@
 {
   "name": "github-user-profile",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.6.9",
@@ -12,8 +12,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
-    "styled-components": "^5.3.5",
-    "web-vitals": "^2.1.4"
+    "styled-components": "^5.3.5"
   },
   "scripts": {
     "start": "react-scripts start",
