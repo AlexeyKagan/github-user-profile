@@ -1,7 +1,7 @@
-# Getting Started with Create React App
+# Github user profile page using apollo, graphql client and react.
 ### Notes about app
 1. My approach was to use as little as possible third-party libraries, I didn’t want to drag various component libraries into this project
-2. asd
+
 ### In order to run this project you have to do following
 - Update `.env` file
 ```
