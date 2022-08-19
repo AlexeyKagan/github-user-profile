@@ -1,0 +1,17 @@
+export const COLORS = {
+  WHITE: '#fff',
+  FG_DEFAULT: '#24292f',
+  FG_MUTED: '#57606a',
+  ACCENT_FG: '#0969da',
+  BTN_COLOR: '#24292f',
+  BTN_BG: '#f6f8fa',
+  BTN_BORDER: 'rgba(27, 31, 36, 0.15)',
+  BTN_SHADOW: '0 1px 0 rgba(27, 31, 36, 0.04)',
+  BTN_INSET_SHADOW: 'inset 0 1px 0 rgba(255, 255, 255, 0.25)',
+  BTN_HOVER_BG: '#f3f4f6',
+  BTN_HOVER_BORDER: 'rgba(27, 31, 36, 0.15)',
+  BORDER_DEFAULT: '#d0d7de',
+  RED: 'red',
+  L_YELLOW: '#f1e05a',
+  L_BLUE: '#3178c6',
+};
